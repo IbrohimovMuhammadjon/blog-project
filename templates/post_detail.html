@@ -6,4 +6,6 @@
         <h3>Author: {{ post.author }}</h3>
         <p><b>Text:</b> {{ post.description }}</p>
     </div>
+<a href="{% url 'post_edit' post.pk %}">Edit post</a>
+<a href="{% url 'post_delete' post.pk %}">Delete post</a>
 {% endblock content %}
