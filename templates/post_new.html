@@ -2,8 +2,17 @@
 
 {% block content %}
     <h1>New Post</h1>
-        <form action="" method="post">{% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Save">
-        </form>
+    <form action="" method="post" class="mt-4">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.title.label }}
+            {{ form.title }}  <!-- No need to set class here -->
+        </div>
+        <div class="form-group">
+            {{ form.description.label }}
+            {{ form.description }}  <!-- No need to set class here -->
+        </div>
+        <button type="submit" class="btn btn-primary">Save Post</button>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+    </form>
 {% endblock content %}

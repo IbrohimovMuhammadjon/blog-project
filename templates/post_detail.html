@@ -1,11 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="post-entry">
-        <h2>Title: {{ post.title }}</h2>
-        <h3>Author: {{ post.author }}</h3>
-        <p><b>Text:</b> {{ post.description }}</p>
+<div class="container mt-5">
+    <div class="post-detail">
+        <h1 class="display-4 mb-3">{{ post.title }}</h1>
+        <h6 class="text-muted mb-4">by {{ post.author.username }} on {{ post.created_at|date:"F j, Y" }}</h6>
+        
+        <div class="card mb-4" style="border-radius: 15px;">
+            <div class="card-body">
+                <p class="lead">{{ post.description }}</p>
+                <hr>
+                <div class="post-content">
+                    <h5>Content:</h5>
+                    <div class="content-text" style="line-height: 1.6;">
+                        {{ post.content|safe }}
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center">
+                    <a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+                    <span class="text-muted">Posted on: {{ post.created_at|date:"F j, Y" }}</span>
+                </div>
+            </div>
+        </div>
     </div>
-<a href="{% url 'post_edit' post.pk %}">Edit post</a>
-<a href="{% url 'post_delete' post.pk %}">Delete post</a>
+</div>
 {% endblock content %}
