@@ -55,4 +55,8 @@ python manage.py runserver
 The app will be available at http://127.0.0.1:8000/.
 
 
-Thank you for using the blog documentation!
+# Preview Photos of the Website:
+![Homepage Preview](images/home_preview.png)  
+![Post Detail Preview](images/post_preview.png)  
+![Post Add Preview](images/new_post.png)  
+![Post Edit Preview](images/edit_post.png)  
